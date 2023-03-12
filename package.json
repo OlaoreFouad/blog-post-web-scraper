@@ -1,0 +1,14 @@
+{
+  "name": "blog-post-scraper",
+  "version": "1.0.0",
+  "description": "blog posts scraper for github plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Olaore Fouad",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^19.7.4"
+  }
+}
