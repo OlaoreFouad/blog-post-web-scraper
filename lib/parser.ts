@@ -1,11 +1,17 @@
 import { Extractor } from "./extractor";
 import { CrawlerHandler } from "./crawler";
 
+export type Platform = "medium";
+
 export enum PostPlatform {
-  MEDIUM,
+  MEDIUM = "medium",
 }
 
-export interface PostList {
+export const recognizedPlatforms: Record<Platform, PostPlatform> = {
+  medium: PostPlatform.MEDIUM,
+};
+
+export interface Post {
   title: string;
   link: string;
   index: number;
@@ -14,8 +20,8 @@ export interface PostList {
 export class PostParser {
   constructor(private platform: PostPlatform) {}
 
-  async parse(blogUrl: string): Promise<PostList[]> {
-    const postList: PostList[] = [];
+  async parse(blogUrl: string): Promise<Post[]> {
+    const postList: Post[] = [];
 
     const crawlerHandler = new CrawlerHandler();
     crawlerHandler.setUrl(blogUrl);
